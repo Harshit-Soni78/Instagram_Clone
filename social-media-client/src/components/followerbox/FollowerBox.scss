@@ -1,0 +1,91 @@
+.FollowerBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .blank {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .follower-container {
+        background-color: white;
+        position: relative;
+        width: 400px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 99;
+        border-radius: 12px;
+
+        .close-icon {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        .top {
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        .followers-list {
+            overflow-y: auto;
+            width: 100%;
+            height: 100%;
+            padding: 8px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .follower {
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                cursor: pointer;
+
+                .avatar {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .follower-name {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .FollowerBox {
+        .follower-container {
+            background-color: #262626;
+        }
+    }
+}

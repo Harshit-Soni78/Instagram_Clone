@@ -1,0 +1,31 @@
+.Follower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+    }
+
+    h5 {
+        font-size: 12px;
+    }
+
+    .follow {
+        color: var(--accent-color);
+        cursor: pointer;
+    }
+
+    .follow:hover {
+        color: #1f567b;
+    }
+
+    .unfollow {
+        color: rgb(126, 126, 126);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,203 @@
+.CreatePost {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .close-icon {
+        position: absolute;
+        color: white;
+        top: 2%;
+        right: 2%;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .blank {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .create-container {
+        position: relative;
+        background-color: white;
+        width: 816px;
+        height: 518px;
+        z-index: 99;
+        border-radius: 12px;
+
+        .top-bar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 9px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-color);
+
+            h3 {
+                position: absolute;
+                right: 2%;
+                border: none;
+                background: none;
+                font-weight: 600;
+                color: var(--accent-color);
+                cursor: pointer;
+            }
+
+            h3:hover {
+                color: #1f567b;
+            }
+        }
+
+        .create-box {
+            display: grid;
+            grid-template-columns: 476px auto;
+
+            .create-left-part {
+                border-right: 1px solid var(--border-color);
+                display: flex;
+                justify-content: center;
+                height: 478px;
+                width: 100%;
+
+                .add-post {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+
+                    .labelImg {
+                        background-color: var(--accent-color);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 500;
+                        padding: 4px 12px;
+                        border-radius: 10px;
+                        color: white;
+                        cursor: pointer;
+                    }
+
+                    .inputImg {
+                        display: none;
+                    }
+                }
+
+                .img-container {
+                    .post-img {
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    .create-right-part {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 16px;
+        gap: 18px;
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        textarea {
+            border: none;
+            outline: none;
+            height: 200px;
+            resize: none;
+            word-break: break-all;
+        }
+
+        textarea::placeholder {
+            font-size: 14px;
+            letter-spacing: 0px;
+            word-spacing: -4px;
+        }
+    }
+}
+
+.dark-mode {
+    .CreatePost {
+        .create-container {
+            background-color: #262626;
+        }
+
+        textarea {
+            background-color: #262626;
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .CreatePost {
+        bottom: 0;
+        top: unset;
+
+        .blank {
+            display: none;
+        }
+
+        .close-icon {
+            width: fit-content;
+            left: 1%;
+            top: 2%;
+            color: black;
+            z-index: 100;
+        }
+
+        .create-container {
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0;
+
+            .top-bar {
+                padding: 20px;
+            }
+
+            .create-box {
+                display: flex;
+                flex-direction: column-reverse;
+                height: 100vh;
+                justify-content: space-between;
+
+                .create-right-part {
+                    flex: 1;
+                }
+
+                .create-left-part {
+                    height: 380px;
+                    flex: 1.5;
+
+                    .img-container {
+                        height: 380px;
+                        width: 100%;
+                    }
+
+                    .add-post {
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}

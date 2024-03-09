@@ -1,0 +1,302 @@
+.Profile {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 100vh;
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        width: 935px;
+        max-width: 935px;
+        gap: 20px;
+        overflow-y: auto;
+        height: 100%;
+
+        .upper-part {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+
+            .profile-card {
+                border-radius: 4px;
+                padding: 30px 91px;
+
+                .user-bio {
+                    display: none;
+                }
+
+                .user-profile {
+                    display: flex;
+                    gap: 101px;
+
+                    .user-img {
+                        width: 150px;
+                        height: 150px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .user-details {
+                        padding-block: 8px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        .user-name {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+
+                            .name {
+                                font-weight: 400;
+                                font-size: 20px;
+                            }
+
+                            .edit-profile {
+                                padding: 8px 17px;
+                                font-weight: 600;
+                                border-radius: 9px;
+                                border: none;
+                                cursor: pointer;
+                                outline: none;
+                            }
+
+                            .edit-profile:hover {
+                                background-color: rgb(216, 216, 216);
+                            }
+
+                            .following {
+                                padding: 8px 17px;
+                                font-weight: 600;
+                                border-radius: 9px;
+                                border: none;
+                                cursor: pointer;
+                                outline: none;
+                            }
+
+                            .following:hover {
+                                background-color: rgb(216, 216, 216);
+                            }
+
+                            .follow {
+                                padding: 8px 17px;
+                                font-weight: 600;
+                                border-radius: 9px;
+                                border: none;
+                                cursor: pointer;
+                                outline: none;
+                                color: white;
+                                background-color: var(--accent-color);
+                            }
+
+                            .follow:hover {
+                                background-color: #1572dd;
+                            }
+                        }
+
+                        .follower-info {
+                            display: flex;
+                            align-items: center;
+                            gap: 40px;
+
+                            h3 {
+                                font-weight: 600;
+                                font-size: 16px;
+                            }
+
+                            .followers,
+                            .followings,
+                            .posts {
+                                display: flex;
+                                gap: 6px;
+                                align-items: center;
+                            }
+
+                            .followers,
+                            .followings {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .bio {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .middle-part {
+            display: none;
+        }
+
+        .lower-part {
+            padding-top: 22px;
+
+            .user-images {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 28px;
+
+                .image {
+                    cursor: pointer;
+
+                    .single-image {
+                        height: 293px;
+                        width: 293px;
+                        position: relative;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            transition: all 0.3s ease-in-out;
+                        }
+                    }
+                }
+
+                .single-image:hover img {
+                    transform: scale(1.1);
+                }
+
+                .single-image:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    );
+                    z-index: 1;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .single-image:hover:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    .Profile {
+        .profile-container {
+            .lower-part {
+                padding: 16px;
+
+                .user-images {
+                    gap: 18px;
+
+                    .image {
+                        .single-image {
+                            width: auto;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .Profile {
+        .profile-container {
+            gap: 10px;
+
+            .upper-part {
+                padding: unset;
+
+                .profile-card {
+                    padding: 30px 18px;
+
+                    .user-bio {
+                        display: block;
+                        margin-top: 14px;
+                        font-size: 14px;
+                    }
+
+                    .user-profile {
+                        gap: 26px;
+                        align-items: center;
+
+                        .user-img {
+                            width: 77px;
+                            height: 77px;
+                        }
+
+                        .user-details {
+                            .user-name {
+                                flex-direction: column;
+                                gap: 15px;
+
+                                .name {
+                                    align-self: baseline;
+                                }
+
+                                .edit-profile {
+                                    padding: 9px 70px;
+                                    letter-spacing: 0.5px;
+                                    border-radius: 9px;
+                                }
+                            }
+
+                            .follower-info,
+                            .bio {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .middle-part {
+                display: block;
+
+                .follower-info {
+                    display: flex;
+                    justify-content: space-around;
+
+                    .posts,
+                    .followers,
+                    .followings {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        p {
+                            font-size: 14px;
+                            letter-spacing: 0.1px;
+                            color: #6e6e6e;
+                        }
+                    }
+                }
+            }
+
+            .lower-part {
+                padding: 22px 0;
+                border-top: 1px solid var(--border-color);
+                height: 96vh;
+
+                .user-images {
+                    gap: 2px;
+
+                    .image {
+                        .single-image {
+                            width: auto;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

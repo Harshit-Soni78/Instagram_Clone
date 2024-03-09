@@ -1,0 +1,189 @@
+.Navbar {
+    background-color: white;
+    top: 0;
+    max-width: 244px;
+    height: 100vh;
+    border-right: 1px solid var(--border-color);
+
+    .nav-container {
+        width: 244px;
+        padding: 8px 12px;
+        position: relative;
+        height: 100%;
+
+        .more-nav {
+            display: none;
+        }
+
+        .nav-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        .banner {
+            margin: 32px 12px 35px 12px;
+            cursor: pointer;
+
+            .insta-name-icon {
+                display: block;
+            }
+
+            .insta-icon {
+                display: none;
+            }
+        }
+
+        .banner:active {
+            opacity: 0.55;
+        }
+
+        .nav-link {
+            padding: 12px 12px;
+            border-radius: 30px;
+            line-height: 24px;
+            margin-bottom: 8px;
+            gap: 16px;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+
+            svg {
+                transition: 0.2s;
+            }
+        }
+
+        .nav-link:active {
+            opacity: 0.65;
+
+            svg {
+                color: grey;
+                transform: scale(0.9);
+            }
+        }
+
+        .nav-link.open {
+            font-weight: 700;
+        }
+
+        .nav-link:hover {
+            background-color: rgb(250, 250, 250);
+
+            svg {
+                transform: scale(1.06);
+            }
+        }
+
+        .home-nav {
+            font-weight: 700;
+        }
+
+        .more {
+            position: absolute;
+            bottom: 2.3%;
+            width: 90%;
+        }
+    }
+}
+
+.dark-mode {
+    .Navbar {
+        background-color: black;
+        color: white;
+
+        .nav-link:hover {
+            background-color: rgba(32, 32, 32, 0.46);
+        }
+
+        svg {
+            color: white;
+            fill: white;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .Navbar {
+        .nav-container {
+            .more-nav {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1262px) {
+    .Navbar {
+        span {
+            display: none;
+        }
+
+        .nav-container {
+            width: auto;
+
+            .more-nav {
+                display: none;
+            }
+
+            .banner {
+                margin: 28px 12px 44px 12px;
+
+                .insta-name-icon {
+                    display: none;
+                }
+
+                .insta-icon {
+                    display: block;
+                }
+
+                .insta-icon:hover {
+                    transform: scale(1.06);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Navbar {
+        position: fixed;
+        bottom: 0;
+        align-self: flex-end;
+        z-index: 99;
+        width: 100vw;
+        height: 7vh;
+        top: unset;
+        max-width: unset;
+        border-top: 1px solid var(--border-color);
+
+        .nav-container {
+            width: 100%;
+            padding: 0px 6px 8px 6px;
+
+            .more-nav {
+                display: flex;
+            }
+
+            .banner,
+            .more {
+                display: none;
+            }
+
+            .nav-links-container {
+                ul {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+}

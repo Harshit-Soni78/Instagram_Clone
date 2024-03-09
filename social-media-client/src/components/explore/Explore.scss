@@ -1,0 +1,89 @@
+.Explore {
+    padding: 24px 85px;
+    height: 100vh;
+    overflow-y: auto;
+
+    .explore-container {
+        .posts {
+            width: 100%;
+            display: grid;
+            gap: 38px;
+            grid-template-columns: repeat(3, 1fr);
+
+            .post {
+                cursor: pointer;
+
+                .single-post {
+                    width: 292px;
+                    height: 292px;
+                    position: relative;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.3s ease-in-out;
+                    }
+                }
+
+                .single-post:hover img {
+                    transform: scale(1.1);
+                }
+
+                .single-post:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.2),
+                        rgba(0, 0, 0, 0.2)
+                    );
+                    z-index: 1;
+                    opacity: 0;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                .single-post:hover:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .Explore {
+        padding: 24px 30px;
+
+        .explore-container {
+            .posts {
+                gap: 28px;
+
+                .post {
+                    .single-post {
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Explore {
+        padding: 0px;
+        height: 95vh;
+
+        .explore-container {
+            .posts {
+                gap: 2px;
+            }
+        }
+    }
+}

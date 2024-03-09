@@ -1,0 +1,157 @@
+.Post {
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+    .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 5px;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            height: 58px;
+
+            .heading-name {
+                font-size: 14px;
+                font-weight: 600;
+                padding-left: 7px;
+                cursor: pointer;
+            }
+
+            .time-ago {
+                color: #aaa;
+            }
+        }
+
+        .right {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .right:hover {
+            color: #aaa;
+        }
+    }
+
+    .content {
+        width: 470px;
+        height: 470px;
+        min-height: 470px;
+        max-height: 586px;
+        position: relative;
+
+        button {
+            position: absolute;
+            bottom: 4%;
+            right: 4%;
+            background-color: #262626;
+            display: flex;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            padding: 6px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+    }
+
+    .footer {
+        padding-top: 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 21px;
+
+        .likes-comments {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            .icon {
+                font-size: 28px;
+                animation: like 0.25s;
+                cursor: pointer;
+            }
+
+            .icon:hover {
+                color: #aaa;
+            }
+
+            .liked {
+                animation: like 0.25s;
+                fill: #ed4956;
+                stroke: #ed4956;
+            }
+
+            .comment {
+                display: flex;
+                cursor: pointer;
+            }
+
+            .comment:hover {
+                svg {
+                    color: #aaa;
+                }
+            }
+
+            @keyframes like {
+                0% {
+                    transform: scale(1);
+                }
+                90% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        .caption-container {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .heading-name {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Post {
+        .content {
+            max-height: 586px;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+
+            img,
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .footer {
+            padding: 11px 15px 21px;
+        }
+    }
+}
